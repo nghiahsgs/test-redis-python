@@ -36,7 +36,8 @@ get name
 ### STEP 4: Dùng python kết nối
 ```python
 import redis
-import time
+import timeprotected-mode no
+
 host = '127.0.0.1'
 port = '6379'
 client = redis.Redis(host=host,port =port)
@@ -53,4 +54,21 @@ time.sleep(2)
 
 print('name',client.get("name"))
 print(client.ttl("name"))
+```
+
+### STEP 5: Cho phép kết nối từ xa (mặc định chỉ cho kết nối từ localhost)
+```
+vi /etc/redis/redis.conf
+Sửa bind 127.0.0.1 thành bind 0.0.0.0
+Sửa protected-mode yes thành protected-mode no
+```
+
+```
+sudo systemctl restart redis
+```
+
+Mở tưởng lửa qua cổng 6379
+```
+ufw allow 6379
+ufw allow 6379/tcp
 ```
