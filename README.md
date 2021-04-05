@@ -2,16 +2,16 @@
 test redis python
 
 
-STEP 1: install redis on Ubuntu
+### STEP 1: install redis on Ubuntu
 ```
 sudo apt update
 sudo apt install redis-server
 ```
-STEP 2: Check status redis
+### STEP 2: Check status redis
 ```
 sudo systemctl status redis
 ```
-STEP 3: Open cli
+### STEP 3: Open cli
 ```
 redis-cli
 ping =>pong
@@ -33,7 +33,7 @@ redis-cli
 get name
 ```
 
-STEP 4: Dùng python kết nối
+### STEP 4: Dùng python kết nối
 ```python
 import redis
 import time
