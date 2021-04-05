@@ -48,7 +48,7 @@ import timeprotected-mode no
 
 host = '127.0.0.1'
 port = '6379'
-client = redis.Redis(host=host,port =port)
+client = redis.Redis(host=host,port =port,charset='utf-8',decode_responses=True)
 name = client.get("name")
 print('name',name)
 print(client.ttl("name"))
