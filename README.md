@@ -7,6 +7,14 @@ test redis python
 sudo apt update
 sudo apt install redis-server
 ```
+
+Mở tưởng lửa qua cổng 6379
+```
+ufw allow 6379
+ufw allow 6379/tcp
+```
+
+
 ### STEP 2: Check status redis
 ```
 sudo systemctl status redis
@@ -67,8 +75,3 @@ Sửa protected-mode yes thành protected-mode no
 sudo systemctl restart redis
 ```
 
-Mở tưởng lửa qua cổng 6379
-```
-ufw allow 6379
-ufw allow 6379/tcp
-```
